@@ -433,37 +433,6 @@ When you learn them architecturally — layer by layer, concept by concept, rela
 
 The rules become intuitive. The applications become obvious. And the knowledge stays with you permanently.
 
-**The Complete Mental Architecture**
-Here’s your entire security model knowledge, compressed into one memorable framework:
-
-SECURITY FOUNDATIONS
-├── CIA Triad: Confidentiality, Integrity, Availability
-├── Access Control: MAC, DAC, RBAC
-└── Security Levels: Top Secret → Unclassified
-
-BELL-LAPADULA (Confidentiality)
-├── "No Read Up, No Write Down"
-├── Memory: "Read Down, Write Up"
-└── Goal: Keep secrets secret
-
-BIBA (Integrity) ← Mirror of Bell-LaPadula
-├── "No Read Down, No Write Up"
-├── Memory: "Read Up, Write Down"
-└── Goal: Keep data trustworthy
-
-CLARK-WILSON (Commercial Integrity)
-├── CDIs, UDIs, TPs, IVPs
-├── Well-formed transactions + Separation of duties
-└── Goal: Keep business transactions correct and auditable
-
-APPLICATION
-├── Leakage risk → Bell-LaPadula
-├── Tampering risk → Biba
-└── Transaction risk → Clark-Wilson
-
-
-© 2026 Satender Kumar | Architecture-Driven Learning
-
 **Security models are not about memorization.**__
 They are about understanding how information flows, how trust is preserved, and how systems enforce control.
 
