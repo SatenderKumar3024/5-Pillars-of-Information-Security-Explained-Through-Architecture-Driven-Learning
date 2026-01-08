@@ -2,6 +2,8 @@
 
 # 5-Pillars-of-Information-Security-Explained-Through-Architecture-Driven-Learning
 
+**Explained Through Architecture-Driven Learning -** https://medium.com/@Satender_Kumar_30/5-pillars-of-information-security-explained-through-architecture-driven-learning-80636a4a9685
+
 Most learners struggle with security models not because the concepts are hard, but because they are taught in isolation:
 
 - ❌ Bell-LaPadula explained without foundations
@@ -22,18 +24,6 @@ This article walks you through the essential access control security models usin
 _Let’s build your security architecture from the ground up._
 
 Our learning path divides into five progressive layers: @satenderkumar
-
-┌─────────────────────────────────────┐
-│   Layer 5: Real-World Application   │
-├─────────────────────────────────────┤
-│   Layer 4: Clark-Wilson Model       │
-├─────────────────────────────────────┤
-│   Layer 3: Biba Model               │
-├─────────────────────────────────────┤
-│   Layer 2: Bell-LaPadula Model      │
-├─────────────────────────────────────┤
-│   Layer 1: Security Foundations     │
-└─────────────────────────────────────┘
 
 © 2026 Satender Kumar | Architecture-Driven Learning
 
@@ -80,26 +70,6 @@ Every security model is simply a formal way to enforce one of these objectives.
 
 That’s it. No magic. No complexity for complexity’s sake. Just formal rules protecting C, I, or A.
 
-**Simple Version Summary**
-┌─────────────────────┐
-                   │  **CONFIDENTIALITY**    │
-                    │                     │
-                    │  Keep information   │
-                    │      SECRET         │
-                    └──────────┬──────────┘
-                               │
-                               │
-        ┌──────────────────────┼──────────────────────┐
-        │                      │                      │
-        │                      │                      │
-        ▼                      ▼                      ▼
-┌───────────────┐      ┌───────────────┐      ┌───────────────┐
-│  **INTEGRITY**│      │**CIA TRIAD **  │     │ **AVAILABILITY** │
-│               │      │               │      │               │
-│Keep information      │   SECURITY    │      │Keep information
-│   ACCURATE    │      │    GOALS      │      │  ACCESSIBLE   │
-└───────────────┘      └───────────────┘      └───────────────┘
-
 © 2026 Satender Kumar | Architecture-Driven Learning
 **Triangle Version**
 
@@ -125,29 +95,7 @@ CONFIDENTIALITY
         Keep it ACCURATE            Keep it ACCESSIBLE
 
 © 2026 Satender Kumar | Architecture-Driven Learning
-**Box Version (Clearest)**
-┌────────────────────────────────────────────────────────────┐
-│                        CIA TRIAD                           │
-│                  Three Security Goals                      │
-└────────────────────────────────────────────────────────────┘
-┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
-│                  │  │                  │  │                  │
-│ CONFIDENTIALITY  │  │    INTEGRITY     │  │  AVAILABILITY    │
-│                  │  │                  │  │                  │
-├──────────────────┤  ├──────────────────┤  ├──────────────────┤
-│                  │  │                  │  │                  │
-│  Keep secrets    │  │  Keep data       │  │  Keep systems    │
-│  SECRET          │  │  ACCURATE        │  │  ACCESSIBLE      │
-│                  │  │                  │  │                  │
-├──────────────────┤  ├──────────────────┤  ├──────────────────┤
-│                  │  │                  │  │                  │
-│  Only authorized │  │  Data is not     │  │  Information is  │
-│  people can      │  │  changed by      │  │  available when  │
-│  view data       │  │  unauthorized    │  │  needed          │
-│                  │  │  parties         │  │                  │
-│                  │  │                  │  │                  │
-└──────────────────┘  └──────────────────┘  └──────────────────┘
-        C                    I                    A
+
 **The Trust Layer**
 Establishing identity and accountability.
 
@@ -176,21 +124,6 @@ Providing undeniable proof that an action occurred. Neither sender nor receiver 
 
 Security goals are meaningless without enforcement. That’s where access control models come in:
 
-**Complete Overview**
-┌─────────────────────────────────────────────────────────────────┐
-│                    ACCESS CONTROL MODELS                        │
-│                  The Enforcement Mechanisms                     │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-          ┌───────────────────┼───────────────────┐
-          │                   │                   │
-          ▼                   ▼                   ▼
-    ┌───────────┐       ┌───────────┐       ┌───────────┐
-    │    MAC    │       │    DAC    │       │   RBAC    │
-    └───────────┘       └───────────┘       └───────────┘
-      Mandatory          Discretionary         Role-Based
-
-© 2026 Satender Kumar | Architecture-Driven Learning
 
 **MAC — Mandatory Access Control**
 The system enforces access using security labels. Users cannot change permissions — period. Think military classification systems.
@@ -198,155 +131,25 @@ The system enforces access using security labels. Users cannot change permission
 <img width="1400" height="664" alt="image" src="https://github.com/user-attachments/assets/9dba617a-a726-4c9c-bb20-09cf11cd491e" />
 
 
-┌─────────────────────────────────────────────────────────────────┐
-│                 MAC - MANDATORY ACCESS CONTROL                  │
-└─────────────────────────────────────────────────────────────────┘
-    ┌─────────────┐                         ┌─────────────┐
-    │    USER     │                         │    DATA     │
-    │             │                         │             │
-    │  Label:     │                         │  Label:     │
-    │  SECRET     │                         │  SECRET     │
-    └──────┬──────┘                         └──────┬──────┘
-           │                                       │
-           │         ┌─────────────────┐           │
-           └────────►│     SYSTEM      │◄──────────┘
-                     │                 │
-                     │  Compares labels│
-                     │  Grants/Denies  │
-                     │     access      │
-                     └─────────────────┘
-┌─────────────────────────────────────────────────────────────────┐
-│  KEY POINTS:                                                    │
-│                                                                 │
-│  • System enforces access using security LABELS                 │
-│  • Users CANNOT change permissions                              │
-│  • Central authority controls everything                        │
-│  • Used in: Military, Government, Classified systems            │
-└─────────────────────────────────────────────────────────────────┘
-© 2026 Satender Kumar | Architecture-Driven Learning
-
 **Discretionary Access Control (DAC)**
 Owners control access and can grant permissions to others. Flexible but risky. Think file sharing on your personal computer.
 
 <img width="1400" height="656" alt="image" src="https://github.com/user-attachments/assets/ac611cbd-8b26-459d-b8cc-0395cafac7b1" />
-
-
-┌─────────────────────────────────────────────────────────────────┐
-│               DAC - DISCRETIONARY ACCESS CONTROL                │
-└─────────────────────────────────────────────────────────────────┘
-                     ┌─────────────────┐
-                     │      OWNER      │
-                     │                 │
-                     │  Creates file   │
-                     │  Controls access│
-                     └────────┬────────┘
-                              │
-                              │ Grants permissions
-                              │
-           ┌──────────────────┼──────────────────┐
-           │                  │                  │
-           ▼                  ▼                  ▼
-     ┌──────────┐       ┌──────────┐       ┌──────────┐
-     │  User A  │       │  User B  │       │  User C  │
-     │          │       │          │       │          │
-     │  READ    │       │  READ    │       │   NO     │
-     │  WRITE   │       │  ONLY    │       │  ACCESS  │
-     └──────────┘       └──────────┘       └──────────┘
-┌─────────────────────────────────────────────────────────────────┐
-│  KEY POINTS:                                                    │
-│                                                                 │
-│  • Owner controls access                                        │
-│  • Owner CAN grant permissions to others                        │
-│  • Flexible but less secure                                     │
-│  • Used in: Personal computers, File sharing                    │
-└─────────────────────────────────────────────────────────────────┘
-© 2026 Satender Kumar | Architecture-Driven Learning
 
 **Role-Based Access Control (RBAC)**
 Access is assigned to roles, not individuals. When someone changes jobs, you change their role — not hundreds of individual permissions. Think enterprise systems.
 
 <img width="1400" height="672" alt="image" src="https://github.com/user-attachments/assets/5317deb2-a398-4eaa-bdd3-6c10da617abb" />
 
-┌─────────────────────────────────────────────────────────────────┐
-│               RBAC - ROLE-BASED ACCESS CONTROL                  │
-└─────────────────────────────────────────────────────────────────┘
-        USERS                 ROLES               PERMISSIONS
-    ┌──────────┐                                 
-    │  Alice   │──────┐   ┌──────────┐        ┌───────────────┐
-    └──────────┘      ├──►│  ADMIN   │───────►│ Full Access   │
-    ┌──────────┐      │   └──────────┘        └───────────────┘
-    │   Bob    │──────┘                       
-    └──────────┘                              
-                          ┌──────────┐        ┌───────────────┐
-    ┌──────────┐      ┌──►│ MANAGER  │───────►│ Read + Write  │
-    │  Carol   │──────┤   └──────────┘        └───────────────┘
-    └──────────┘      │                       
-    ┌──────────┐      │                       
-    │  David   │──────┘                       
-    └──────────┘                              
-                          ┌──────────┐        ┌───────────────┐
-    ┌──────────┐          │ EMPLOYEE │───────►│ Read Only     │
-    │   Eve    │─────────►└──────────┘        └───────────────┘
-    └──────────┘                              
-┌─────────────────────────────────────────────────────────────────┐
-│  KEY POINTS:                                                    │
-│                                                                 │
-│  • Access assigned to ROLES, not individuals                    │
-│  • Users are assigned to roles                                  │
-│  • Change role = Change all permissions instantly               │
-│  • Used in: Enterprises, Corporations, Large organizations      │
-└─────────────────────────────────────────────────────────────────┘
-© 2026 Satender Kumar | Architecture-Driven Learning
-
 **Side-by-Side Comparison**
 
 <img width="1400" height="677" alt="image" src="https://github.com/user-attachments/assets/453cc87c-bde7-4eff-b9c3-ae710428eb21" />
 
-
-┌──────────────────┬──────────────────┬──────────────────┐
-│       MAC        │       DAC        │      RBAC        │
-│    Mandatory     │  Discretionary   │    Role-Based    │
-├──────────────────┼──────────────────┼──────────────────┤
-│                  │                  │                  │
-│  SYSTEM decides  │  OWNER decides   │  ROLE decides    │
-│                  │                  │                  │
-├──────────────────┼──────────────────┼──────────────────┤
-│                  │                  │                  │
-│  Users CANNOT    │  Users CAN       │  Admins assign   │
-│  change access   │  share access    │  users to roles  │
-│                  │                  │                  │
-├──────────────────┼──────────────────┼──────────────────┤
-│                  │                  │                  │
-│  Most strict     │  Most flexible   │  Balanced        │
-│                  │                  │                  │
-├──────────────────┼──────────────────┼──────────────────┤
-│                  │                  │                  │
-│  Military        │  Personal PC     │  Enterprise      │
-│  Government      │  Home network    │  Corporate       │
-│                  │                  │                  │
-└──────────────────┴──────────────────┴──────────────────┘
-
-© 2026 Satender Kumar | Architecture-Driven Learning
 These access control mechanisms form the base upon which our security models operate.
 
 **Quick Reference**
 
 <img width="1400" height="677" alt="image" src="https://github.com/user-attachments/assets/c77fcdd3-c6e8-4c84-85be-22b014f8735e" />
-
-
-┌─────────────────────────────────────────────────────────────────┐
-│                     QUICK REFERENCE                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  MAC  = System controls access    → "You CANNOT change this"    │
-│                                                                 │
-│  DAC  = Owner controls access     → "I CHOOSE who gets in"      │
-│                                                                 │
-│  RBAC = Role controls access      → "Your JOB decides access"   │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-
-© 2026 Satender Kumar | Architecture-Driven Learning
 
 **Key Takeaways**
 **Remember these core concepts**
@@ -359,20 +162,6 @@ These access control mechanisms form the base upon which our security models ope
 Security models organize users and data into classification levels:
 
 <img width="1400" height="1139" alt="image" src="https://github.com/user-attachments/assets/94661b03-46b1-4bd0-99bb-a92fa19c3172" />
-
-
-┌──────────────────┐
-│   TOP SECRET     │  ← Highest sensitivity
-├──────────────────┤
-│   SECRET         │
-├──────────────────┤
-│   CONFIDENTIAL   │
-├──────────────────┤
-│   UNCLASSIFIED   │  ← Lowest sensitivity
-└──────────────────┘
-
-
-© 2026 Satender Kumar | Architecture-Driven Learning
 
 _Higher levels mean more sensitivity or greater trust requirements._
 
@@ -532,18 +321,6 @@ Here’s what makes Clark-Wilson fundamentally different:
 Users never access data directly. All actions happen through controlled transactions.
 
 Instead of managing who can read or write what (like Bell-LaPadula and Biba), Clark-Wilson manages how changes happen.
-
-┌──────────┐      ┌────────────────┐      ┌──────────┐
-│   USER   │ ──→  │ Transformation │ ──→  │   DATA   │
-│          │      │   Procedure    │      │  (CDI)   │
-└──────────┘      │     (TP)       │      └──────────┘
-                  └────────────────┘
-                         ↑
-                  ┌──────────────────┐
-                  │    IVP Checks    │
-                  │  (Verification)  │
-                  └──────────────────┘
-© 2026 Satender Kumar | Architecture-Driven Learning
 
 **The Golden Relationship**
 This is what most learners never get taught — and it’s the key to mastering both models instantly:
